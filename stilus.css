@@ -9,10 +9,10 @@
     box-sizing: border-box;
 }
 
-/* ===== BODY KOMPENZÁLJA A FIX HEADER-T ===== */
+/* ===== BODY ===== */
 body {
     margin: 0;
-    padding-top: 180px; /* EZ A KULCS */
+    padding-top: 180px; /* a fix header miatt */
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg);
     color: var(--text);
@@ -21,7 +21,6 @@ body {
 }
 
 /* ===== FEJLÉC ===== */
-
 #fejlec {
     position: fixed;
     top: 0;
@@ -34,23 +33,27 @@ body {
     z-index: 1000;
 }
 
-/* belső igazítás */
 .header-inner {
     max-width: 1400px;
     margin: auto;
     text-align: center;
-    padding-top: 10px;
     position: relative;
+    padding-top: 10px;
 }
 
+/* LOGÓ */
 #logo {
     height: 80px;
     display: block;
     margin: 0 auto;
 }
 
-/* ===== MENÜ ===== */
+/* LOGÓ LINK */
+.logo-link {
+    display: inline-block;
+}
 
+/* ===== MENÜ ===== */
 table {
     margin: 10px auto 0;
     border-collapse: collapse;
@@ -73,22 +76,21 @@ a:hover {
     color: var(--primary);
 }
 
-/* ===== SOCIAL JOBB OLDALT – STABIL ===== */
-
+/* ===== SOCIAL ICONOK ===== */
 .social {
     position: absolute;
-    right: 30px;
+    left: 30px; /* bal oldalra */
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
 }
 
 .icon {
     font-size: 26px;
-    margin-left: 15px;
 }
 
-/* ===== CÍMES ELVÁLASZTÓ ===== */
-
+/* ===== CÍMEK ELVÁLASZTÓ ===== */
 .hrszoveg {
     margin: 40px auto;
     width: 70%;
@@ -119,7 +121,6 @@ a:hover {
 }
 
 /* ===== TARTALMI DOBOZOK ===== */
-
 #infok,
 #elerhetoseg {
     background: white;
@@ -141,7 +142,6 @@ a:hover {
 }
 
 /* ===== CÍMEK ===== */
-
 .bevezeto {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
@@ -159,7 +159,6 @@ a:hover {
 }
 
 /* ===== TÉRKÉP ===== */
-
 #terkep {
     max-width: 1100px;
     margin: 40px auto;
@@ -169,7 +168,6 @@ a:hover {
 }
 
 /* ===== GALÉRIA ===== */
-
 .kepek {
     max-width: 1300px;
     margin: auto;
@@ -192,54 +190,7 @@ a:hover {
     transform: scale(1.04);
 }
 
-/* ===== MOBIL ===== */
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 220px;
-    }
-
-    .social {
-        position: static;
-        transform: none;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    td {
-        padding: 8px;
-        font-size: 12px;
-    }
-
-    .kepek img {
-        height: 300px;
-    }
-}
-.header-inner {
-    max-width: 1400px;
-    margin: auto;
-    position: relative;
-    text-align: center;
-    padding-top: 10px;
-}
-
-/* LOGÓ LINK */
-.logo-link {
-    display: inline-block;
-}
-
-/* SOCIAL FIX JOBB OLDALON */
-.social {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.icon {
-    font-size: 26px;
-    margin-left: 15px;
-}
+/* ===== FOOTER ===== */
 footer {
     width: 100%;
     margin-top: 40px;
@@ -254,94 +205,92 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* ===== MOBIL (max 768px) ===== */
-@media (max-width: 768px) {
-
-    /* a fejléc magassága kicsit nő, hogy legyen hely a nagyobb ikonoknak */
-    body {
-        padding-top: 220px; /* header hely */
-    }
-
-    #fejlec {
-        height: auto;
-        padding: 15px 10px;
-    }
-
-    .header-inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #logo {
-        height: 70px;
-        margin-bottom: 10px;
-    }
-
-    /* MENÜ GOMBOK NAGYOBBAK ÉS KÉNYELMESEBBEK */
-    table {
-        width: 100%;
-    }
-
-    td {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px 0;
-        font-size: 18px; /* nagyobb betű a könnyebb kattintásért */
-        border-bottom: 1px solid #eee;
-    }
-
-    td:last-child {
-        border-bottom: none;
-    }
-
-    /* SOCIAL JOBB OLDALT FELÜL VAGY KÖZÉPEN */
-    .social {
-        position: static;
-        margin-top: 15px;
-        transform: none;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .icon {
-        font-size: 28px;
-        margin: 0;
-        padding: 5px;
-    }
-
-    /* GALÉRIA – kisebb képek, rugalmas grid */
-    .kepek {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .kepek img {
-        height: 250px;
-    }
-
-    /* FOOTER – kisebb betű, jobban olvasható */
-    footer p {
-        font-size: 12px;
-    }
-
-    /* Címsorok kisebbek */
-    .bevezeto {
-        font-size: 28px;
-    }
-
-    .alcim {
-        font-size: 14px;
-    }
-
-    .hrszoveg::after {
-        font-size: 22px;
-    }
+/* ===== HAMBURGER ICON ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
 }
 
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+}
 
+/* ===== LENYÍLÓ MOBIL MENÜ ===== */
+#mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    flex-direction: column;
+}
 
+#mobile-menu a {
+    padding: 12px 20px;
+    display: block;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+}
+
+#mobile-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+/* ===== MOBILOS SZABÁLYOK ===== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 220px;
+    }
+
+    /* Header flex: social bal, logó középre, hamburger jobb */
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .social {
+        order: 1;
+        display: flex;
+        gap: 15px;
+    }
+
+    .logo-link {
+        order: 2;
+        margin: 0 auto;
+    }
+
+    .hamburger {
+        order: 3;
+        display: flex;
+    }
+
+    /* Table menü elrejtése mobilon */
+    #menu-table {
+        display: none;
+    }
+
+    /* Galéria kisebb képek */
+    .kepek img {
+        height: 300px;
+    }
+
+    /* Menü és td kisebb */
+    td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}

@@ -4,40 +4,57 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stilus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Alkalmi Ruhák</title>
 </head>
 <body>
 <div id="fejlec">
-    <div class="header-inner">
+  <div class="header-inner">
 
-        <!-- LOGÓ – kattintható -->
-        <a href="index.html" class="logo-link">
-            <img src="./Főoldal ruhak/no-ka fashion logo.jpg" alt="Logó" id="logo">
-        </a>
-
-        <table>
-            <tr>
-                <td><a href="index.html">RÓLUNK</a></td>
-                <td><a href="index.html#elerhetoseg">ELÉRHETŐSÉG</a></td>
-                <td><a href="alkalmi.html">ALKALMI RUHA</a></td>
-                <td><a href="menyasszonyi.html">MENYASSZONYI RUHA</a></td>
-                <td><a href="menyecske.html">MENYECSKE RUHA</a></td>
-            </tr>
-        </table>
-
-        <!-- SOCIAL – MINDIG JOBB OLDALT -->
-        <div class="social">
-            <a href="https://www.instagram.com/nokafashion4/" target="_blank" class="icon">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100092262949532" target="_blank" class="icon">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-        </div>
-
+    <!-- SOCIAL ikonok balra -->
+    <div class="social">
+      <a href="https://www.instagram.com/nokafashion4/" target="_blank" class="icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100092262949532" target="_blank" class="icon">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
     </div>
-</div>
 
+    <!-- LOGÓ középre -->
+    <a href="index.html" class="logo-link">
+      <img src="./Főoldal ruhak/no-ka fashion logo.jpg" alt="Logó" id="logo">
+    </a>
+
+    <!-- HAMBURGER jobbra -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- DESKTOP MENÜ -->
+    <table id="menu-table">
+      <tr>
+        <td><a href="index.html">RÓLUNK</a></td>
+        <td><a href="index.html#elerhetoseg">ELÉRHETŐSÉG</a></td>
+        <td><a href="alkalmi.html">ALKALMI RUHA</a></td>
+        <td><a href="menyasszonyi.html">MENYASSZONYI RUHA</a></td>
+        <td><a href="menyecske.html">MENYECSKE RUHA</a></td>
+      </tr>
+    </table>
+
+    <!-- MOBIL LENYÍLÓ MENÜ -->
+    <div id="mobile-menu">
+      <a href="index.html">RÓLUNK</a>
+      <a href="index.html#elerhetoseg">ELÉRHETŐSÉG</a>
+      <a href="alkalmi.html">ALKALMI RUHA</a>
+      <a href="menyasszonyi.html">MENYASSZONYI RUHA</a>
+      <a href="menyecske.html">MENYECSKE RUHA</a>
+    </div>
+
+  </div>
+</div>
     <hr class="hrszoveg rolunk" data-content="ALKALMI RUHÁK">
     <div class="kepek">
         <img src="./alkalmi ruha/alk1.jpg" alt="Ruha" class="f3">
@@ -113,5 +130,15 @@
 <footer>
     <p>© 2026 Az oldal készítése és jogai: Mittnacht Noel. Minden jog fenntartva.</p>
 </footer>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    if(menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
 </body>
 </html>
