@@ -254,4 +254,94 @@ footer p {
     letter-spacing: 0.5px;
 }
 
+/* ===== MOBIL (max 768px) ===== */
+@media (max-width: 768px) {
+
+    /* a fejléc magassága kicsit nő, hogy legyen hely a nagyobb ikonoknak */
+    body {
+        padding-top: 220px; /* header hely */
+    }
+
+    #fejlec {
+        height: auto;
+        padding: 15px 10px;
+    }
+
+    .header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo {
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    /* MENÜ GOMBOK NAGYOBBAK ÉS KÉNYELMESEBBEK */
+    table {
+        width: 100%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 18px; /* nagyobb betű a könnyebb kattintásért */
+        border-bottom: 1px solid #eee;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    /* SOCIAL JOBB OLDALT FELÜL VAGY KÖZÉPEN */
+    .social {
+        position: static;
+        margin-top: 15px;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .icon {
+        font-size: 28px;
+        margin: 0;
+        padding: 5px;
+    }
+
+    /* GALÉRIA – kisebb képek, rugalmas grid */
+    .kepek {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .kepek img {
+        height: 250px;
+    }
+
+    /* FOOTER – kisebb betű, jobban olvasható */
+    footer p {
+        font-size: 12px;
+    }
+
+    /* Címsorok kisebbek */
+    .bevezeto {
+        font-size: 28px;
+    }
+
+    .alcim {
+        font-size: 14px;
+    }
+
+    .hrszoveg::after {
+        font-size: 22px;
+    }
+}
+
+
 
