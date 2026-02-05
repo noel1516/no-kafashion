@@ -249,7 +249,7 @@ footer p {
 }
 
 /* ===== MOBILOS SZABÁLYOK ===== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) { /* korábban 768px volt */
     body {
         padding-top: 220px;
     }
@@ -294,3 +294,4 @@ footer p {
         font-size: 12px;
     }
 }
+
