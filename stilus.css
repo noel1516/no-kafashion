@@ -248,10 +248,11 @@ footer p {
     background-color: #f2f2f2;
 }
 
-/* ===== MOBILOS SZABÁLYOK ===== */
-@media (max-width: 1024px) { /* korábban 768px volt */
+/* ===== MOBILOS SZABÁLYOK – nagyobb breakpoint ===== */
+@media (max-width: 1500px) {
+
     body {
-        padding-top: 220px;
+        padding-top: 220px; /* a fix header miatt */
     }
 
     /* Header flex: social bal, logó középre, hamburger jobb */
@@ -276,6 +277,18 @@ footer p {
     .hamburger {
         order: 3;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
     }
 
     /* Table menü elrejtése mobilon */
@@ -283,15 +296,40 @@ footer p {
         display: none;
     }
 
+    /* Lenőtt mobil menü */
+    #mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    #mobile-menu a {
+        padding: 12px 20px;
+        display: block;
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px solid #eee;
+        font-size: 18px;
+    }
+
+    #mobile-menu a:hover {
+        background-color: #f2f2f2;
+    }
+
     /* Galéria kisebb képek */
     .kepek img {
         height: 300px;
     }
 
-    /* Menü és td kisebb */
+    /* Menü td kisebb */
     td {
         padding: 8px;
         font-size: 12px;
     }
 }
-
