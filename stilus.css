@@ -1,203 +1,257 @@
+:root {
+    --bg: #faf8f6;
+    --primary: #b89b7c;
+    --text: #2b2b2b;
+    --soft: #eae3dc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ===== BODY KOMPENZÁLJA A FIX HEADER-T ===== */
 body {
-    font-size: 30px;
-    font-family: myfont;
-    src:url(betu.ttf)
-    
+    margin: 0;
+    padding-top: 180px; /* EZ A KULCS */
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
 }
 
-
-#infok {
-    border: 4px double black;
-    margin: auto;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    width: 85%;
-    padding: 10px;
-    text-align: center;
-}
-
-
-table {
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 15px;
-    text-align: center;
-
-}
-
-td {
-    text-decoration: none;
-    border-right: 1px solid black;
-    padding: 5px;
-}
-
-#kapcs {
-    border: none;
-}
-
-
-#rol {
-    border: 1px solid black;
-}
-
-.hrszoveg {
-    line-height: 1em;
-    position: relative;
-    outline: 0;
-    border: 0;
-    color: black;
-    text-align: center;
-    height: 1.5em;
-    width: 85%;
-
-    &:before {
-      content: '';
-      background: linear-gradient(to right, transparent, black, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px;
-    }
-    &:after {
-      content: attr(data-content);
-      position: relative;
-      display: inline-block;
-      color: black;
-  
-      padding: 0 .5em;
-      line-height: 1.5em;
-      color: black;
-      background-color: white;
-    }
-  }
-
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: lightgray;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-.icons a{
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 2em;
-}
-
-.icons {
-    float: right;
-}
-
-.icon {
-    display: block;
-    margin-bottom: 10px;
-    float: right;
-    font-size: 40px;
-    padding-top: 6px;
-    margin: 10px;
-}
-
-
-.icons :hover {
-    color: lightgrey;
-}
-
-h1 {
-    text-align: center;
-}
-
-#terkep {
-    margin: auto;
-    border: 1px solid black;
-    text-align: center;
-    width: 85%;
-    height: 500px;
-    margin-bottom: 30px;
-}
-
-#elerhetoseg {
-    border: 4px double gray;
-    text-align: center;
-    width: 45%;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
+/* ===== FEJLÉC ===== */
 
 #fejlec {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: white;
-    border-bottom: 1px solid black;
+    left: 0;
     width: 100%;
-    z-index: 9;
     height: 180px;
-    font-size: 90%;
-    padding: 3px;
-    
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--soft);
+    z-index: 1000;
 }
 
-.rolunk {
-    margin-top: 210px;
-    text-align: center;
-}
-
-#ruhak {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.kepek{
-    width: 95%;
-    text-align: center;
+/* belső igazítás */
+.header-inner {
+    max-width: 1400px;
     margin: auto;
-    margin-top: 30px;
-}
-
-#f1 {
-    padding: 5px;
-    padding-right: 10px;
-    padding-left: 30px;
-    height: 40%;
-    width: 40%;
-}
-#f2 {
-    height: 45%;
-    width: 45%;
-    padding: 5px;
-}
-
-.f3 {
-    height: 45%;
-    width: 45%;
-    padding: 5px;
-}
-
-.f7 {
-    height: 45%;
-    width: 45%;
-    padding: 5px;
+    text-align: center;
+    padding-top: 10px;
+    position: relative;
 }
 
 #logo {
-    height: 85px;
-    width: 140px;
-    margin-left: 95px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
 }
 
+/* ===== MENÜ ===== */
 
+table {
+    margin: 10px auto 0;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px 18px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* ===== SOCIAL JOBB OLDALT – STABIL ===== */
+
+.social {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon {
+    font-size: 26px;
+    margin-left: 15px;
+}
+
+/* ===== CÍMES ELVÁLASZTÓ ===== */
+
+.hrszoveg {
+    margin: 40px auto;
+    width: 70%;
+    border: none;
+    text-align: center;
+    position: relative;
+}
+
+.hrszoveg::before {
+    content: "";
+    height: 1px;
+    background: var(--soft);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.hrszoveg::after {
+    content: attr(data-content);
+    background: var(--bg);
+    padding: 0 20px;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+/* ===== TARTALMI DOBOZOK ===== */
+
+#infok,
+#elerhetoseg {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#infok {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+}
+
+#elerhetoseg {
+    max-width: 500px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+/* ===== CÍMEK ===== */
+
+.bevezeto {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.alcim {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* ===== TÉRKÉP ===== */
+
+#terkep {
+    max-width: 1100px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== GALÉRIA ===== */
+
+.kepek {
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.kepek img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.kepek img:hover {
+    transform: scale(1.04);
+}
+
+/* ===== MOBIL ===== */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 220px;
+    }
+
+    .social {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .kepek img {
+        height: 300px;
+    }
+}
+.header-inner {
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* LOGÓ LINK */
+.logo-link {
+    display: inline-block;
+}
+
+/* SOCIAL FIX JOBB OLDALON */
+.social {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon {
+    font-size: 26px;
+    margin-left: 15px;
+}
+footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+footer p {
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.5px;
+}
 
 
