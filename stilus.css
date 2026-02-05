@@ -12,7 +12,7 @@
 /* ===== BODY ===== */
 body {
     margin: 0;
-    padding-top: 180px; /* a fix header miatt */
+    padding-top: 180px; /* Asztali gépen a fix header miatt */
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg);
     color: var(--text);
@@ -53,7 +53,7 @@ body {
     display: inline-block;
 }
 
-/* ===== MENÜ ===== */
+/* ===== MENÜ (ASZTALI) ===== */
 table {
     margin: 10px auto 0;
     border-collapse: collapse;
@@ -79,7 +79,7 @@ a:hover {
 /* ===== SOCIAL ICONOK ===== */
 .social {
     position: absolute;
-    left: 30px; /* bal oldalra */
+    left: 30px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -244,104 +244,97 @@ footer p {
     font-size: 18px;
 }
 
-#mobile-menu a:hover {
-    background-color: #f2f2f2;
-}
-
-/* ===== MOBILOS SZABÁLYOK ===== */
-@media (max-width: 768px) {
-/* ===== MOBILOS SZABÁLYOK JAVÍTVA ===== */
+/* ===== MOBILOS SZABÁLYOK (JAVÍTVA) ===== */
 @media (max-width: 768px) {
     body {
-        padding-top: 160px; /* picit lejjebb vettem, hogy ne legyen túl sok az üres hely */
+        padding-top: 110px; /* Összehúzva a kisebb fejléc miatt */
     }
 
     #fejlec {
-        height: auto; /* hagyjuk, hogy a tartalom határozza meg a magasságot */
-        padding-bottom: 15px;
+        height: auto; 
+        min-height: 100px;
+        padding-bottom: 5px;
     }
 
     .header-inner {
         display: flex;
-        justify-content: center; /* A fő tengelyen középre zárunk mindent */
+        justify-content: center;
         align-items: center;
-        position: relative;
-        padding: 10px 20px;
-        min-height: 120px;
+        min-height: 100px;
+        padding: 5px 20px;
     }
 
-    /* Social ikonok kényszerítése a bal szélre */
+    /* Social ikonok kényszerítése a bal oldalra */
     .social {
-        position: absolute; /* Kivesszük a flow-ból */
+        position: absolute;
         left: 20px;
         top: 50%;
         transform: translateY(-50%);
-        margin: 0;
-        flex: none; 
-        order: unset;
+        gap: 15px;
     }
 
-    /* Logo - most már valóban középen lesz */
+    /* Logó középre és kisebbre */
     .logo-link {
         margin: 0 auto;
-        order: unset;
-        display: block;
     }
 
     #logo {
-        height: 80px; /* Mobilon érdemes kicsit kisebbre venni */
+        height: 70px;
+        margin-top: 0;
     }
 
-    /* Hamburger ikon kényszerítése a jobb szélre */
+    /* Hamburger ikon kényszerítése a jobb oldalra */
     .hamburger {
-        position: absolute; /* Kivesszük a flow-ból */
+        display: flex;
+        position: absolute;
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
-        display: flex;
-        order: unset;
+        width: 32px;
+        height: 24px;
     }
 
-    /* --- További mobil finomítások --- */
+    .hamburger span {
+        height: 3px;
+    }
+
+    /* Régi asztali menü elrejtése */
     #menu-table {
         display: none;
     }
 
-    .kepek img {
-        height: 250px;
-    }
-
+    /* Tartalmi elemek igazítása */
     #infok, #elerhetoseg {
-        max-width: 90%;
+        max-width: 92%;
+        margin: 20px auto;
         padding: 25px;
     }
 
     .bevezeto {
         font-size: 28px;
     }
-}
 
-    /* Hr és címsorok */
     .hrszoveg {
-        width: 95%;
-        margin: 20px auto;    /* középre */
+        width: 92%;
+        margin: 25px auto;
     }
 
-    /* Galéria */
+    .hrszoveg::after {
+        font-size: 22px;
+    }
+
+    /* Galéria 2 oszloposra */
     .kepek {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 10px;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 12px;
     }
 
-    /* Footer */
+    .kepek img {
+        height: 250px;
+    }
+
     footer {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
     }
-
-
 }
-
-
