@@ -248,56 +248,53 @@ footer p {
     background-color: #f2f2f2;
 }
 
-/* ===== MOBIL OPTIMALIZÁLÁS – MINDEN SZÖVEGRE ===== */
-@media (max-width: 1800px) {
+/* ===== MOBIL OPTIMALIZÁLÁS ===== */
+@media (max-width: 768px) {
 
     body {
-        padding-top: 220px; /* fix header miatt */
-        font-size: 20px; /* alap szöveg nagyobb */
-        line-height: 1.8;
+        padding-top: 180px; /* fix header miatt */
+        font-size: 20px;    /* alap szöveg nagyobb */
+        line-height: 1.9;
     }
 
-    /* HEADER FLEX */
+    /* HEADER FLEX – logó középre, social balra, hamburger jobbra */
     .header-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 10px 15px;
     }
 
     /* SOCIAL ICONOK – bal oldalon, nagyobbak */
     .social {
-        order: 1;
         display: flex;
-        gap: 20px;
+        gap: 18px;
     }
 
     .social .icon {
-        font-size: 34px; /* még nagyobb social gomb */
+        font-size: 32px;
     }
 
-    /* LOGÓ középre */
+    /* LOGÓ középre, nagyobb */
+    #logo {
+        height: 100px;
+    }
+
     .logo-link {
-        order: 2;
         margin: 0 auto;
     }
 
     /* HAMBURGER JOBBRA – nagyobb és kényelmesebb */
     .hamburger {
-        order: 3;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 36px;
-        height: 28px;
-        cursor: pointer;
+        width: 40px;
+        height: 32px;
     }
 
     .hamburger span {
-        display: block;
         height: 4px;
-        background-color: black;
-        border-radius: 2px;
     }
 
     /* TABLE MENÜ ELREJTÉSE */
@@ -307,7 +304,8 @@ footer p {
 
     /* LENYÍLÓ MOBIL MENÜ */
     #mobile-menu {
-        display: none;
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
@@ -315,41 +313,32 @@ footer p {
         background-color: #ffffff;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         z-index: 1000;
-        flex-direction: column;
     }
 
     #mobile-menu a {
-        padding: 16px 20px;
-        display: block;
-        color: black;
-        text-decoration: none;
-        border-bottom: 1px solid #eee;
-        font-size: 20px; /* nagyobb betű */
-    }
-
-    #mobile-menu a:hover {
-        background-color: #f2f2f2;
+        padding: 18px 20px;
+        font-size: 20px;
     }
 
     /* GALÉRIA – két kép egymás mellett, nagyobbak */
     .kepek {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 12px;
         padding: 10px;
     }
 
     .kepek img {
         width: 100%;
         height: auto;
-        max-height: 350px;
-        object-fit: cover;
+        max-height: 400px;
         border-radius: 18px;
+        object-fit: cover;
     }
 
     /* CÍMEK – minden cím nagyobb */
     .bevezeto {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .alcim {
@@ -357,25 +346,31 @@ footer p {
     }
 
     .hrszoveg::after {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     /* TARTALMI DOBOZOK */
     #infok,
     #elerhetoseg {
-        padding: 30px;
-        font-size: 18px; /* nagyobb szöveg */
+        padding: 25px;
+        font-size: 18px;
     }
 
     /* FOOTER */
     footer p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     /* TABLE TD */
     td {
-        padding: 12px;
-        font-size: 16px; /* nagyobb menü betű */
+        padding: 14px 16px;
+        font-size: 18px;
+    }
+
+    /* GOMBOK és linkek */
+    button, .btn {
+        font-size: 18px;
+        padding: 12px 20px;
     }
 }
 
