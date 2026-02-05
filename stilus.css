@@ -249,7 +249,7 @@ footer p {
 }
 
 /* ===== MOBIL OPTIMALIZÁLÁS – MINDEN SZÖVEGRE ===== */
-@media (max-width: 1500px) {
+@media (max-width: 1800px) {
 
     body {
         padding-top: 220px; /* fix header miatt */
