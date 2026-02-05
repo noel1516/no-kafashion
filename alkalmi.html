@@ -132,14 +132,19 @@
     <p>© 2026 Az oldal készítése és jogai: Mittnacht Noel. Minden jog fenntartva.</p>
 </footer>
 <script>
-function toggleMenu() {
-    const menu = document.getElementById("mobile-menu");
-    if(menu.style.display === "flex") {
-        menu.style.display = "none";
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  hamburger.addEventListener("click", () => {
+    if (mobileMenu.style.display === "flex") {
+      mobileMenu.style.display = "none";
     } else {
-        menu.style.display = "flex";
+      mobileMenu.style.display = "flex";
     }
-}
+  });
+});
 </script>
+
 </body>
 </html>

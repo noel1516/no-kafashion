@@ -248,16 +248,13 @@ footer p {
     background-color: #f2f2f2;
 }
 
-/* ===== MOBIL OPTIMALIZÁLÁS – MINDEN SZÖVEGRE ===== */
+/* ===== MOBILOS SZABÁLYOK ===== */
 @media (max-width: 768px) {
-
     body {
-        padding-top: 220px; /* fix header miatt */
-        font-size: 20px; /* alap szöveg nagyobb */
-        line-height: 1.8;
+        padding-top: 220px;
     }
 
-    /* HEADER FLEX */
+    /* Header flex: social bal, logó középre, hamburger jobb */
     .header-inner {
         display: flex;
         justify-content: space-between;
@@ -265,118 +262,35 @@ footer p {
         padding: 10px 20px;
     }
 
-    /* SOCIAL ICONOK – bal oldalon, nagyobbak */
     .social {
         order: 1;
         display: flex;
-        gap: 20px;
+        gap: 15px;
     }
 
-    .social .icon {
-        font-size: 34px; /* még nagyobb social gomb */
-    }
-
-    /* LOGÓ középre */
     .logo-link {
         order: 2;
         margin: 0 auto;
     }
 
-    /* HAMBURGER JOBBRA – nagyobb és kényelmesebb */
     .hamburger {
         order: 3;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 36px;
-        height: 28px;
-        cursor: pointer;
     }
 
-    .hamburger span {
-        display: block;
-        height: 4px;
-        background-color: black;
-        border-radius: 2px;
-    }
-
-    /* TABLE MENÜ ELREJTÉSE */
+    /* Table menü elrejtése mobilon */
     #menu-table {
         display: none;
     }
 
-    /* LENYÍLÓ MOBIL MENÜ */
-    #mobile-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 1000;
-        flex-direction: column;
-    }
-
-    #mobile-menu a {
-        padding: 16px 20px;
-        display: block;
-        color: black;
-        text-decoration: none;
-        border-bottom: 1px solid #eee;
-        font-size: 20px; /* nagyobb betű */
-    }
-
-    #mobile-menu a:hover {
-        background-color: #f2f2f2;
-    }
-
-    /* GALÉRIA – két kép egymás mellett, nagyobbak */
-    .kepek {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 10px;
-    }
-
+    /* Galéria kisebb képek */
     .kepek img {
-        width: 100%;
-        height: auto;
-        max-height: 350px;
-        object-fit: cover;
-        border-radius: 18px;
+        height: 300px;
     }
 
-    /* CÍMEK – minden cím nagyobb */
-    .bevezeto {
-        font-size: 32px;
-    }
-
-    .alcim {
-        font-size: 18px;
-    }
-
-    .hrszoveg::after {
-        font-size: 26px;
-    }
-
-    /* TARTALMI DOBOZOK */
-    #infok,
-    #elerhetoseg {
-        padding: 30px;
-        font-size: 18px; /* nagyobb szöveg */
-    }
-
-    /* FOOTER */
-    footer p {
-        font-size: 14px;
-    }
-
-    /* TABLE TD */
+    /* Menü és td kisebb */
     td {
-        padding: 12px;
-        font-size: 16px; /* nagyobb menü betű */
+        padding: 8px;
+        font-size: 12px;
     }
 }
-
-
