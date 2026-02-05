@@ -43,7 +43,7 @@ body {
 
 /* LOGÓ */
 #logo {
-    height: 80px;
+    height: 100px;
     display: block;
     margin: 0 auto;
 }
@@ -293,4 +293,38 @@ footer p {
         padding: 8px;
         font-size: 12px;
     }
+        /* Tartalmi dobozok – belső margó a szélekhez */
+
+    /* Tartalmi dobozok mobilon */
+    #infok,
+    #elerhetoseg {
+        max-width: 95%;       /* ne lógjon ki a szélekig */
+        margin: 20px auto;    /* középre */
+        padding: 20px;        /* belső szellő a szélhez */
+        box-sizing: border-box;
+    }
+
+    /* Hr és címsorok */
+    .hrszoveg {
+        width: 95%;
+        margin: 20px auto;    /* középre */
+    }
+
+    /* Galéria */
+    .kepek {
+        padding-left: 10px;
+        padding-right: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    /* Footer */
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
 }
+
+
