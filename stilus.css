@@ -250,75 +250,76 @@ footer p {
 
 /* ===== MOBILOS SZABÁLYOK ===== */
 @media (max-width: 768px) {
+/* ===== MOBILOS SZABÁLYOK JAVÍTVA ===== */
+@media (max-width: 768px) {
     body {
-        padding-top: 220px;
+        padding-top: 160px; /* picit lejjebb vettem, hogy ne legyen túl sok az üres hely */
+    }
+
+    #fejlec {
+        height: auto; /* hagyjuk, hogy a tartalom határozza meg a magasságot */
+        padding-bottom: 15px;
     }
 
     .header-inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* A fő tengelyen középre zárunk mindent */
         align-items: center;
         position: relative;
         padding: 10px 20px;
+        min-height: 120px;
     }
 
-    /* Social ikonok bal oldalon */
+    /* Social ikonok kényszerítése a bal szélre */
     .social {
-        display: flex;
-        gap: 20px;
-        flex: 1; /* elfoglalja a bal oldalt */
-        order: 1;
+        position: absolute; /* Kivesszük a flow-ból */
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        flex: none; 
+        order: unset;
     }
 
-    /* Logo középre */
+    /* Logo - most már valóban középen lesz */
     .logo-link {
-        margin: 0 auto; /* középre igazítás */
-        order: 2;
-    }
-
-    /* Hamburger ikon jobb oldalon */
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 36px;
-        height: 28px;
-        cursor: pointer;
-        order: 3;
-    }
-
-    .hamburger span {
+        margin: 0 auto;
+        order: unset;
         display: block;
-        height: 4px;
-        background-color: black;
-        border-radius: 2px;
     }
 
-    /* Table menü elrejtése mobilon */
+    #logo {
+        height: 80px; /* Mobilon érdemes kicsit kisebbre venni */
+    }
+
+    /* Hamburger ikon kényszerítése a jobb szélre */
+    .hamburger {
+        position: absolute; /* Kivesszük a flow-ból */
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        order: unset;
+    }
+
+    /* --- További mobil finomítások --- */
     #menu-table {
         display: none;
     }
 
-    /* Galéria kisebb képek */
     .kepek img {
-        height: 300px;
+        height: 250px;
     }
 
-    /* Menü és td kisebb */
-    td {
-        padding: 8px;
-        font-size: 12px;
+    #infok, #elerhetoseg {
+        max-width: 90%;
+        padding: 25px;
     }
-        /* Tartalmi dobozok – belső margó a szélekhez */
 
-    /* Tartalmi dobozok mobilon */
-    #infok,
-    #elerhetoseg {
-        max-width: 95%;       /* ne lógjon ki a szélekig */
-        margin: 20px auto;    /* középre */
-        padding: 20px;        /* belső szellő a szélhez */
-        box-sizing: border-box;
+    .bevezeto {
+        font-size: 28px;
     }
+}
 
     /* Hr és címsorok */
     .hrszoveg {
