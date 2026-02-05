@@ -302,6 +302,17 @@ footer p {
     #menu-table {
         display: none;
     }
+    /* TÉRKÉP MOBILON */
+    #terkep {
+        max-width: 92%; /* Így ugyanakkora lesz a szélessége, mint az infó doboznak */
+        margin: 20px auto; /* Középre igazítja és távolságot tart alul-felül */
+    }
+
+    /* Fontos: az iframe-nek is rugalmasnak kell lennie a dobozon belül */
+    #terkep iframe {
+        width: 100% !important;
+        height: 300px; /* Mobilon érdemes kicsit alacsonyabbra venni a magasságot */
+    }
 
     /* Tartalmi elemek igazítása */
     #infok, #elerhetoseg {
