@@ -249,7 +249,7 @@ footer p {
 }
 
 /* ===== MOBILOS SZABÁLYOK – nagyobb breakpoint ===== */
-@media (max-width: 1500px) {
+@media (max-width: 1800px) {
 
     body {
         padding-top: 220px; /* a fix header miatt */
