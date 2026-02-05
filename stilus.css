@@ -254,28 +254,44 @@ footer p {
         padding-top: 220px;
     }
 
-    /* Header flex: social bal, logó középre, hamburger jobb */
     .header-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
         padding: 10px 20px;
     }
 
+    /* Social ikonok bal oldalon */
     .social {
+        display: flex;
+        gap: 20px;
+        flex: 1; /* elfoglalja a bal oldalt */
         order: 1;
-        display: flex;
-        gap: 15px;
     }
 
+    /* Logo középre */
     .logo-link {
+        margin: 0 auto; /* középre igazítás */
         order: 2;
-        margin: 0 auto;
     }
 
+    /* Hamburger ikon jobb oldalon */
     .hamburger {
-        order: 3;
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 36px;
+        height: 28px;
+        cursor: pointer;
+        order: 3;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 4px;
+        background-color: black;
+        border-radius: 2px;
     }
 
     /* Table menü elrejtése mobilon */
