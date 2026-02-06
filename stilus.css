@@ -76,7 +76,7 @@ a:hover {
     color: var(--primary);
 }
 
-/* ===== SOCIAL ICONOK ===== */
+/* ===== SOCIAL ICONOK JAVÍTVA ===== */
 .social {
     position: absolute;
     left: 30px;
@@ -87,7 +87,14 @@ a:hover {
 }
 
 .icon {
-    font-size: 26px;
+    font-size: 24px; /* Kicsit finomabb méret */
+    color: var(--primary); /* Az elegáns aranybarna szín */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    color: var(--text); /* Ha rávisszük az egeret, sötétedik kicsit */
+    transform: scale(1.1); /* Enyhe lüktetés hoverkor */
 }
 
 /* ===== CÍMEK ELVÁLASZTÓ ===== */
@@ -295,7 +302,10 @@ footer p {
     }
 
     .hamburger span {
-        height: 3px;
+    display: block;
+    height: 3px;
+    background-color: var(--text); /* 'black' helyett a változót használjuk */
+    border-radius: 2px;
     }
 
     /* Régi asztali menü elrejtése */
